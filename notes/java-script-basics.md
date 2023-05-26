@@ -1,4 +1,4 @@
-1.  async vs defer in script tag 
+1.  async vs defer in script tag \n
     <script scr = "">
         IT will fetch the script from n/w and execcute then and their. At this point HTML parsing stopped, it will resume once script execution over.
     <script async scr = "">
