@@ -29,4 +29,10 @@ other dependencies are nomal. dev dependency are used in development work and no
         -Differential bundling - to suppport older browser.
         -Parcel gives better error handling suggestion
         -Host our app on HTTPS
-        -Tree Shaking - remove unused code 
+        -Tree Shaking - remove unused code \
+        - Difference dev and prod bundles
+
+14. npx parcel build index.html - while running this command we will get one exception to resolve that exception
+    We should remove the main from package.json file.
+15. browsersList - We can define this property in package.json and provide the browsers list you wants your app support browsers
+
