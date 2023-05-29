@@ -35,4 +35,26 @@ other dependencies are nomal. dev dependency are used in development work and no
 14. npx parcel build index.html - while running this command we will get one exception to resolve that exception
     We should remove the main from package.json file.
 15. browsersList - We can define this property in package.json and provide the browsers list you wants your app support browsers
+16. We can define scripts in package.json file under script tag. 
+17. npm start is equivlant to npm run start - so we can use npm start instead  of npm run start
+18. npm build is not equivalent to npm run build - so we have to type npm run build to build    the  prject for production.
+19. JSX and react are two different things
+20. React can be wriiten without JSX.
+21. JSX is not html inside java script
+22. JSX is HTML like or XML syntax not exactly HTML.
+23. JSX is just syntax
+24. JSX tranpiled before it reached to the JS engine. Parcel(bundlers) does it for us.
+25. JSX is not a pure java script it will not run by JS engine.
+26. Parcel takes help from babel to transpiled JSX code.
+27. JSX code tranpiled to React.createElemnt by Babel and then React.createElement is rendered by ReactDOM to browser friendly code.
+28. Babel is javascript compiler.
+29. Babel tranpiled from ES6 code to older browser compatible code.
+30. Attribute in JSX is in camel case.
+31. IF JSX code written in two line then it should be enclosed with round bracket
+32. Everything is component in react
+33. Component are of two type - 1) Class Based component- older way to write 2) Functional Component 
+34. React Functional compnent => Its a noraml JS function.
+35. Component name should be start with capital letter. React understands in capital letter.
+36. Functional component is normal JS function which returns a  JSX elemnts.
+
 
