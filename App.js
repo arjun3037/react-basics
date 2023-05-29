@@ -6,12 +6,22 @@ const heading = React.createElement("h1",{id:"heading"},"React Basics");
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const jsxHeading = <h1 id="heading">React Basics Using JSX</h1>
+//const jsxHeading = <h1 id="heading">React Basics Using JSX</h1>
 
-const HeadingComponent = () =>{
-    return <h1 className="heading">React Basic Fucntional Component</h1>
-}
+const TitleCompnent = () => { return <h1 className="heading"> React Functional Title</h1>}
 
-const HeadingComponent1 = () => <h1 className="heading"> React Functional Component</h1>
+const el = <h1>Another element</h1>
 
-root.render(jsxHeading);
+const reactElement = <h1>React Element ---  {el}</h1>
+const number = 1000;
+
+// component composition
+const HeadingComponent = () => (
+    <div id = "container">
+        <h1 className="heading">React Basic Fucntional Component 1</h1>
+    </div>
+);
+
+
+root.render(reactElement);
+root.render(<HeadingComponent/>);

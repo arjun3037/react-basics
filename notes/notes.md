@@ -43,12 +43,12 @@ other dependencies are nomal. dev dependency are used in development work and no
 21. JSX is not html inside java script
 22. JSX is HTML like or XML syntax not exactly HTML.
 23. JSX is just syntax
-24. JSX tranpiled before it reached to the JS engine. Parcel(bundlers) does it for us.
+24. JSX transpiled before it reached to the JS engine. Parcel(bundlers) does it for us.
 25. JSX is not a pure java script it will not run by JS engine.
 26. Parcel takes help from babel to transpiled JSX code.
 27. JSX code tranpiled to React.createElemnt by Babel and then React.createElement is rendered by ReactDOM to browser friendly code.
 28. Babel is javascript compiler.
-29. Babel tranpiled from ES6 code to older browser compatible code.
+29. Babel transpiled from ES6 code to older browser compatible code.
 30. Attribute in JSX is in camel case.
 31. IF JSX code written in two line then it should be enclosed with round bracket
 32. Everything is component in react
@@ -56,5 +56,24 @@ other dependencies are nomal. dev dependency are used in development work and no
 34. React Functional compnent => Its a noraml JS function.
 35. Component name should be start with capital letter. React understands in capital letter.
 36. Functional component is normal JS function which returns a  JSX elemnts.
-
+37. Component composition is one component inside another component.
+38. in curlybraces {} we can execute any piece of JS code inside the component.
+39. JSX takes care cross site injection. JSX won't blindly render data from api , its sanitizes every data its rendering.
+40. JSX can have only one parent element.
+41. React Fragment (<React.Fragment>) - we can add two element at parent level parallely
+        const HeadingComponent = () => (
+            <React.Fragment>
+                <div id = "container1"></div>
+                <div id = "container2"></div>
+            </React.Fragment>
+        );
+42. <React.Fragment> behaves like an empty tag. this belong to React lib.
+43. we can use <></> instead of React fragment.
+        const HeadingComponent = () => (
+            <>
+                <div id = "container1"></div>
+                <div id = "container2"></div>
+            </>
+        );
+44. 
 
