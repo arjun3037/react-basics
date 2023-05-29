@@ -1,27 +1,74 @@
 import React  from "react";
 import ReactDOM from "react-dom/client" 
 
-// React Element
-const heading = React.createElement("h1",{id:"heading"},"React Basics");
+/**
+ * Header
+ *  - logo
+ *  - navItem
+ * Body 
+ *  - Search Bar
+ *  - Restaurant Container
+ *      = Restaurant Card
+ * Footer
+ *  - Copyright disclaimer
+ *  - Links
+ *  - Contacts info
+ */
+
+
+const RestaurantCard = () =>{
+    return (
+        <div className="res-card">
+            <h3>Meghna Foods</h3>
+        </div>
+    )
+}
+
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="res-container">
+                <RestaurantCard/>
+            </div>
+
+        </div>
+    )
+}
+
+const Header = () => {
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className ="logo" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMMP3SJdeoXs2o_qBuKAWtetU132VTFvKOt_IzdbVYBQ&s"/>
+            </div>
+            <div className="nav-items">
+                <ui>
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Cart</li>
+
+                </ui>
+            </div>
+        </div>
+
+    )
+}
+
+
+const AppLayout = () => {
+    return (
+    <div className="app">
+        <Header/>
+        <Body/>
+
+    </div>)
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-//const jsxHeading = <h1 id="heading">React Basics Using JSX</h1>
-
-const TitleCompnent = () => { return <h1 className="heading"> React Functional Title</h1>}
-
-const el = <h1>Another element</h1>
-
-const reactElement = <h1>React Element ---  {el}</h1>
-const number = 1000;
-
-// component composition
-const HeadingComponent = () => (
-    <div id = "container">
-        <h1 className="heading">React Basic Fucntional Component 1</h1>
-    </div>
-);
 
 
-root.render(reactElement);
-root.render(<HeadingComponent/>);
+root.render(<AppLayout/>);
+
