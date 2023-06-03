@@ -2,12 +2,12 @@
           Its repository for all packages.
 2. npm init - input details and it will create the package.json file for us.
 3. package.json - it is configuration file for our npm. We need it for manages the third party packages.
-4. bundlers - It bundles out packages and file and get ready our project for production
+4. bundlers - It bundles out packages and files and get ready our project for production
 5. Dependencies - There are two type of dependencies we can install in our application. one is dev dependencies and 
-other dependencies are nomal. dev dependency are used in development work and normal dependency used in other activity then development.
-6."parcel": "^2.8.3" --  caret sign stands for - if new version will availabel in future it will uatomaticallu 
+other dependencies are nomal. dev dependency are used in development work and normal dependency used in other activity other then development.
+6."parcel": "^2.8.3" --  caret sign stands for - if new version will available in future it will auomatically
     update the minor version in application.
-7. "~2.8.3" -- it will update all future pathced version without increamenting the minoir version.
+7. "~2.8.3" -- it will update all future patched version without increamenting the minor version.
 8. pakcege-lock.json - It keeps record of exact version of packages being used
 9. integrity in pakcege-lock.json - it will keep same the vesion of packege from local to production.
 10. node_modules -  node_ modules cotain all dependency defined in package.json and being used in our application.
@@ -48,7 +48,7 @@ other dependencies are nomal. dev dependency are used in development work and no
 26. Parcel takes help from babel to transpiled JSX code.
 27. JSX code tranpiled to React.createElemnt by Babel and then React.createElement is rendered by ReactDOM to browser friendly code.
 28. Babel is javascript compiler.
-29. Babel transpiled from ES6 code to older browser compatible code.
+29. Babel also transpiled from ES6 code to older browser compatible code.
 30. Attribute in JSX is in camel case.
 31. IF JSX code written in two line then it should be enclosed with round bracket
 32. Everything is component in react
@@ -75,5 +75,19 @@ other dependencies are nomal. dev dependency are used in development work and no
                 <div id = "container2"></div>
             </>
         );
-44. 
-
+44. props - short form of porperty , suppose we wants to pass some data to component then we can send the data with help of props.
+45. We can pass as many props to component react will wrap all propes into one object
+46. props can be recieved in two way 
+    1.  const comp = (props) => {}
+    2. const comp = (props1 , props2) => {} // destrcuturing of objects on the fly -- its a JS concept.
+47. Config Driven UI - All the UI driven by config
+48. When we loop over list then we will have to pass keu props in its child component - 
+49. If we dont' provide key in loops then it will re-render all its child component when a new child component introduce.
+50. Never use index as a key in for loop. ITs not recommended from React documentation.
+51. There are two type of exports/import  first type of default export/import 
+    export default <name of variable / component>
+    import component from "path";
+52. Second type is Named export/import -- this is used when we have to export multiple variable form same file.
+    export const Component/varibale
+    import {component} from "path";
+53. React is fast/efficiency in DOM manupulation.
