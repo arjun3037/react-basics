@@ -1,55 +1,50 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
+
+import { useState , useEffect} from "react";
+
 
 
 const Body = () => {
 
-    let listOfRest = [
-    { 
-    "data": {
-      "id": "466165",
-      "name": "Enoki - Fresh Asian Kitchen",
-      "cloudinaryImageId": "omkqoa7jvuwl47wr9ite",
-      "costForTwo": 100000,
-      "avgRating": "3.0",
-      "cuisines": [
-        "Asian",
-        "Pan-Asian",
-        "Japanese",
-        "Chinese",
-        "Thai"
-      ]
-    },
-    },
-    { 
-        "data": {
-          "id": "466166",
-          "name": "Dominos",
-          "cloudinaryImageId": "omkqoa7jvuwl47wr9ite",
-          "costForTwo": 100000,
-          "avgRating": "4.5",
-          "cuisines": [
-            "Asian",
-            "Pan-Asian",
-            "Japanese",
-            "Chinese",
-            "Thai"
-          ]
-        },
-        }
-  ];
+// local state variables - super powerful variable
+const [listOfRest,setListOfRest] = useState([]);
 
+// ist argument is callback function and second argument is depedency array. 
+useEffect(() =>{
+    fetchData();
+}, []);
+
+const fetchData = async () => {
+    // fetch() method provided by browser.
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5565541&lng=77.4056451&page_type=DESKTOP_WEB_LISTING");
+
+    const json = await data.json();
+
+    setListOfRest(json?.data?.cards[2]?.data?.data?.cards);
+
+    console.log(json);
+}
+
+if(listOfRest.length <= 0){
+    return <h1>Loading............</h1>
+}
 
 
     return (
         <div className="body">
             <div className="filter">
+                <div className="search">
+                    <input type="text" className="search-box"/>
+                    <button onClick={() => {
+                        // filter the list and update the UI
+                    }}>Search</button>
+                </div>
                 <button onClick={() => {
-                    
                     // filter logic goes her
-                    listOfRest = listOfRest.filter((res) => res.data.avgRating > 4);
-                    console.log(listOfRest);
+                    const filterList = listOfRest.filter((res) => res.data.avgRating > 4);
+                    setListOfRest(filterList);
+                    console.log(filterList);
 
                     }} className="filter-btn"> Top Rated Restaurant</button>
             </div>

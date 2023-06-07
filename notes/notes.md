@@ -85,9 +85,28 @@ other dependencies are nomal. dev dependency are used in development work and no
 49. If we dont' provide key in loops then it will re-render all its child component when a new child component introduce.
 50. Never use index as a key in for loop. ITs not recommended from React documentation.
 51. There are two type of exports/import  first type of default export/import 
-    export default <name of variable / component>
+    export default <name of variable/component>
     import component from "path";
 52. Second type is Named export/import -- this is used when we have to export multiple variable form same file.
     export const Component/varibale
     import {component} from "path";
 53. React is fast/efficiency in DOM manupulation.
+54. Hooks are noraml JS utility functions given by React to us.
+55. useState() and useEffect() are most important hooks provided by React.
+56. useState() - used to create state variables in React.
+57. IT maintains state of component.
+58. Whenever a state variable changes then React re-rendering the components.
+59. React use Reconcillation Algorithm( React Fiber).
+60. Virtual DOM is representation of real DOM in terms of JS objects
+61. React is very efficient to diff b/w the virtual DOM and render a new one, and  its kick in when setProperty call from useState hook.
+62. React Fiber is the new reconcillation engine in REACT 16. ITs main goal is to enable incremental rendering of the virtual DOMS.
+63. increamnetal rendeting which splits rendering work into chunks and spread it out over mupltiple frames.
+64. Two appraoches to fetch data from API.
+65. App load ---> fetch Data ----> render it on API.
+66. App/Page load -----> Render it on API ------> Fetch Data from API.(this approach is recommended)
+67. useEffect(() => {} ,[]) hook will be used to fetch data from server
+68. First argument is callback arrow function , this function executed when component render cycle  complete.
+69. fetch() is an ECMAScript6 (ES6) feature.
+70. Shimmer UI is concept in which we show dummy ui to user do that user can anticipate coming result on ui it is better the loading ui concept.
+71. Conditional rendering means when we render based on some condition suppose our data is empty then we will show the shimmer UI.
+72. Why do we need state variabel(useState) ? - if we declare some local variabel and we try to change it then that change will not reflect in UI because React component does not know that a property changed so for that we use useState hook it will re-render the UI and updates the changes on UI.
