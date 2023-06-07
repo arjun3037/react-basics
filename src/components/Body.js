@@ -10,6 +10,8 @@ const Body = () => {
 // local state variables - super powerful variable
 const [listOfRest,setListOfRest] = useState([]);
 
+const [searchText,setSearchText] = useState("");
+
 // ist argument is callback function and second argument is depedency array. 
 useEffect(() =>{
     fetchData();
@@ -35,9 +37,13 @@ if(listOfRest.length <= 0){
         <div className="body">
             <div className="filter">
                 <div className="search">
-                    <input type="text" className="search-box"/>
+                    <input type="text" className="search-box" value={searchText} onChange={(e) => {
+                        setSearchText(e.target.value);
+                    }}/>
                     <button onClick={() => {
                         // filter the list and update the UI
+                        //searchText
+                        console.log();
                     }}>Search</button>
                 </div>
                 <button onClick={() => {
