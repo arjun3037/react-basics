@@ -5,6 +5,10 @@
 5. JS program runs in two phase first phase is creation phase in which it skim through the program and allocate the memory to variables and functions.For variable it assign default value 'undefined' and in case of function it assign whole function code to it.
 6. second phase is code execution phase. it skim through program again and execute program line by line.
 7. Whenever a function get invoked a new execution context being created.again this execution conext contains two component one is memory and second is code. And it will run in two phase first phase is momory creation and code execution. 
+8. JS manages the call stack . first element in the Stack is global execution context.Whwnere a new function gets invoked or a new execution context is created then it will push it inside the stack.  
+9. This call stack manages the execution contexts only.
+10. Callstack also maintain the order of execution of execution contexts.
+11. Hoisting means JS 
 
 
 
