@@ -8,7 +8,11 @@
 8. JS manages the call stack . first element in the Stack is global execution context.Whwnere a new function gets invoked or a new execution context is created then it will push it inside the stack.  
 9. This call stack manages the execution contexts only.
 10. Callstack also maintain the order of execution of execution contexts.
-11. Hoisting means JS 
+11. Hoisting means in JS a variable or function can be used before its declaration because JS complie in two phase in first phase it allocate memory to varibale and function and in second phase it execute the codes.
+12. functions have thier own execution context and that pushed after global execution context if we define any variable in function then it will created in function local execution context.
+13. window is global object which is created along with global execution context.Whenver a JS program run a global execution context being created and a window object created and a this keyword created which is represent the window object.
+14. All the variable and function created in global space means outside of any function then it will be .attached to window object 
+
 
 
 

@@ -81,16 +81,16 @@ other dependencies are nomal. dev dependency are used in development work and no
     1.  const comp = (props) => {}
     2. const comp = (props1 , props2) => {} // destrcuturing of objects on the fly -- its a JS concept.
 47. Config Driven UI - All the UI driven by config
-48. When we loop over list then we will have to pass keu props in its child component - 
+48. When we loop over list then we will have to pass key props in its child component - 
 49. If we dont' provide key in loops then it will re-render all its child component when a new child component introduce.
-50. Never use index as a key in for loop. ITs not recommended from React documentation.
+50. Never use index as a key in for loop. Its not recommended from React documentation.
 51. There are two type of exports/import  first type of default export/import 
     export default <name of variable/component>
     import component from "path";
 52. Second type is Named export/import -- this is used when we have to export multiple variable form same file.
     export const Component/varibale
     import {component} from "path";
-53. React is fast/efficiency in DOM manupulation.
+53. React is fast/efficient in DOM manupulation.
 54. Hooks are noraml JS utility functions given by React to us.
 55. useState() and useEffect() are most important hooks provided by React.
 56. useState() - used to create state variables in React.
@@ -98,7 +98,7 @@ other dependencies are nomal. dev dependency are used in development work and no
 58. Whenever a state variable changes then React re-rendering the components.
 59. React use Reconcillation Algorithm( React Fiber).
 60. Virtual DOM is representation of real DOM in terms of JS objects
-61. React is very efficient to diff b/w the virtual DOM and render a new one, and  its kick in when setProperty call from useState hook.
+61. React is very efficient to diff b/w the virtual DOMs and render a new one, and  its kick in when setProperty call from useState hook.
 62. React Fiber is the new reconcillation engine in REACT 16. ITs main goal is to enable incremental rendering of the virtual DOMS.
 63. increamnetal rendeting which splits rendering work into chunks and spread it out over mupltiple frames.
 64. Two appraoches to fetch data from API.
