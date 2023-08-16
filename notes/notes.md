@@ -105,8 +105,28 @@ other dependencies are nomal. dev dependency are used in development work and no
 65. App load ---> fetch Data ----> render it on API.
 66. App/Page load -----> Render it on API ------> Fetch Data from API.(this approach is recommended)
 67. useEffect(() => {} ,[]) hook will be used to fetch data from server
-68. First argument is callback arrow function , this function executed when component render cycle  complete.
+68. First argument is callback arrow function , and second argument is dependencies, this function executed when component render cycle  complete.
 69. fetch() is an ECMAScript6 (ES6) feature.
 70. Shimmer UI is concept in which we show dummy ui to user do that user can anticipate coming result on ui it is better the loading ui concept.
 71. Conditional rendering means when we render based on some condition suppose our data is empty then we will show the shimmer UI.
 72. Why do we need state variabel(useState) ? - if we declare some local variabel and we try to change it then that change will not reflect in UI because React component does not know that a property changed so for that we use useState hook it will re-render the UI and updates the changes on UI.
+73. never declare useState outisde the component and inside the if else condition , inside the for loop , inside the function
+74. Always put useState at componenet functions starts
+75. useEffect(()=>{},[]) => useEffect second argument is for dependency , if this array is empty the  useEffect will get called once at first render
+76. useEffect(()=>{}) - if we dont provide the dependency array then it will called for every render
+77. useEffect(()=>{},[stateVariable]) - if we provifr any value in dependency array then it will called when this dependency get updated .
+78. <link/> and <a/> difference between these two are , anchor tag refresh whole page but link comonenct swtich the page without refresh
+79. <outlet/> component switching between the routing comonent based on routing , Its help to make our applicatoon single page application. IT just replaceing the required comonent in the page that wont trigger whole page refresh/reload.This is client side routing. we dont have any n/w calls.
+80. There are two type of routing in web apps, one is client side routing and second is server side routing.
+81. in SPA  only components getting interchange with each other via client side routing.
+82. Link is speacial type of anchor tag , internaly link component converts to anchor tag, its kind of wrapper.
+83. Class based compoenent is the old way to define the component
+84. class component extends React.Component {} is the syntax to define the class component
+85. If we want to define the state or receive props  in class based comonent then we need to define  constructor in class and called super(props)
+86. To define the states we just to define this.state ={state1,state2}
+87. if we want to change the state then we need to call this.setState({state1:updateValue}), so it will update the state1 variable value , it will not chnage other state varuiable values in state object.
+88. In class based component when parent component mount(load) and it encounter some other component reference then it instatiate the component means it will call constructor first then it will call the render() functuon.
+
+
+
+

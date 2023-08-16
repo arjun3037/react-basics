@@ -1,6 +1,6 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
-
+import { Link } from "react-router-dom";
 import { useState , useEffect} from "react";
 
 
@@ -8,29 +8,37 @@ import { useState , useEffect} from "react";
 const Body = () => {
 
 // local state variables - super powerful variable
-const [listOfRest,setListOfRest] = useState([]);
+const [listOfRestaurants, setListOfRestraunt] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-const [searchText,setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
 
-// ist argument is callback function and second argument is depedency array. 
+    // never create usestate outside the function compnent
+    // never create useState inside the if and else , for loop , inside functions , it will create the inconsistency in our project
+    // fist argument is callback function and second argument is depedency array. 
 useEffect(() =>{
+
     fetchData();
 }, []);
 
 const fetchData = async () => {
-    // fetch() method provided by browser.
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5565541&lng=77.4056451&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+    );
 
     const json = await data.json();
 
-    setListOfRest(json?.data?.cards[2]?.data?.data?.cards);
+    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
-    console.log(json);
-}
-
-if(listOfRest.length <= 0){
-    return <h1>Loading............</h1>
-}
+    // Optional Chaining
+    setListOfRestraunt(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurant(
+        
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
 
 
     return (
@@ -40,28 +48,31 @@ if(listOfRest.length <= 0){
                     <input type="text" className="search-box" value={searchText} onChange={(e) => {
                         setSearchText(e.target.value);
                     }}/>
-                    <button onClick={() => {
-                        // filter the list and update the UI
-                        //searchText
-                        console.log();
-                    }}>Search</button>
+                    
                 </div>
                 <button onClick={() => {
-                    // filter logic goes her
-                    const filterList = listOfRest.filter((res) => res.data.avgRating > 4);
-                    setListOfRest(filterList);
-                    console.log(filterList);
+                    // filter logic goes her// Filter the restraunt cards and update the UI
+              // searchText
+              console.log(searchText);
 
-                    }} className="filter-btn"> Top Rated Restaurant</button>
+              const filteredRestaurant = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+
+              setFilteredRestaurant(filteredRestaurant);}} className="filter-btn"> Search</button>
             </div>
 
 
             <div className="res-container">
-                {
-                    listOfRest.map(rest => <RestaurantCard key={rest.data.id}  restData={rest}/>)
-                }
+            {filteredRestaurant.map((restaurant) => (
+                <Link to={"/restaurant/"+restaurant?.info.id} key={restaurant?.info.id}>
+                    <RestaurantCard resData={restaurant?.info} />
+                </Link>
+                
+          
+        ))}
             </div>
-        </div>
+        </div> 
     )
 }
 
