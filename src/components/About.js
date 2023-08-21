@@ -9,29 +9,13 @@ class About extends Component {
         super(props);
         console.log("parent constructor")
     }
-    
+
 
     componentDidMount(){
         console.log("Parent componentDidMount called");
     }
 
-    componentDidUpdate(){
-        console.log("Parent componentDidUpdate called");
-    }
-
-    componentDidCatch(){
-        console.log("Parent componentDidCatch called");
-    }
-
-    componentWillUnmount(){
-        console.log("Parent componentWillUnmount called");
-    }
-
-
-    componentDidCatch(){
-        console.log("Parent componentDidCatch called");
-    }
-
+   
 
 
     render(){
@@ -40,7 +24,8 @@ class About extends Component {
             <div>
                 <h1>About Class based </h1>
                 <h2>This is about the React learning</h2>
-                <UserClass name={"Arjun Sing(Class)"} location = {"New Delhi"} contact={"@arjun3035"}/>
+                <UserClass name={"Arjun "} location = {"New Delhi"} contact={"@arjun3035"}/>
+                <UserClass name={"Ankur "} location = {"New Delhi 1"} contact={"@arjun3035 1"}/>
             </div>
         );
     }

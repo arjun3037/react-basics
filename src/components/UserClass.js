@@ -2,9 +2,10 @@ import React from "react"
 
 class UserClass extends React.Component{
 
+
     constructor(props){
         super(props);
-        console.log("Child constructor")
+        console.log(this.props.name + "Child constructor")
         this.state = {
             count : 0,
             
@@ -13,29 +14,14 @@ class UserClass extends React.Component{
     }
 
     componentDidMount(){
-        console.log("Child componentDidMount called");
+        console.log(this.props.name  + "Child componentDidMount called");
     }
 
-    componentDidUpdate(){
-        console.log("Child componentDidUpdate called");
-    }
-
-    componentDidCatch(){
-        console.log("Child componentDidCatch called");
-    }
-
-    componentWillUnmount(){
-        console.log("Child componentWillUnmount called");
-    }
-
-
-    componentDidCatch(){
-        console.log("Child componentDidCatch called");
-    }
+    
 
     render(){
         
-        console.log("Child render function called")
+        console.log(this.props.name + "Child render function called")
 
         const{name,location,contact} = this.props;
         const{count} = this.state;

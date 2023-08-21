@@ -4,7 +4,7 @@ import { UNSAFE_DataRouterStateContext } from "react-router-dom";
 const User = (props) =>{
     const[count] = useState(0);
 
-    console.log(count)
+    console.log(count) 
 
     return (
         <div className="user-card">

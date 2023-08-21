@@ -126,6 +126,10 @@ other dependencies are nomal. dev dependency are used in development work and no
 86. To define the states we just to define this.state ={state1,state2}
 87. if we want to change the state then we need to call this.setState({state1:updateValue}), so it will update the state1 variable value , it will not chnage other state varuiable values in state object.
 88. In class based component when parent component mount(load) and it encounter some other component reference then it instatiate the component means it will call constructor first then it will call the render() functuon.
+89. Constructoor() => render() => child constructor => child render() => child componentDidMount() => parent ComponentDidMount() called -- this is how parent child life cycles.
+90. use of componentDidMount() => this is used to call API calls , which is similiar to useEffect in which we render the compoinent fitst then we call to API and fill the data similiarlty we use componentDidMount() for API call once render() method 
+91. Rander works in two phases 1) Render phase 2) Commit phase . In render phase mounting, constructor calling and render method called and in commit phase React updates the DOM and refs and then called componentDidMount fnction.
+92. For optimization React bundled-up the childs componentDidMount method together and they all called together once render of all child completed. After childs componentDidMount function called then parent componentDidMount function will be called.
 
 
 
